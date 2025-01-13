@@ -33,16 +33,32 @@ function Dashboard() {
     };
 
     return (
-        <div>
-            <h2>Dashboard</h2>
-            {tasks.length > 0 ? (
-                tasks.map((task) => (
-                    <Task task={task} onDelete={deleteTask} key={task.id} />
-                ))
-            ) : (
-                <p>No tasks available. Create one!</p>
-            )}
-        </div>
+        <>
+            <div className="container mx-auto p-4">
+                <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
+                {tasks.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {tasks.map((task) => (
+                            <Task 
+                                task={task} 
+                                onDelete={deleteTask}
+                                key={task.id}
+                                className="p-4 border rounded shadow-sm hover:shadow-md"
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <p className="text-gray-500">No tasks available. Create one!</p>
+                )}
+            </div>
+            <div className="mt-6 flex justify-center">
+                <button className="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600">
+                    <a href="/create" className="no-underline text-white">
+                        Create Task
+                    </a>
+                </button>
+            </div>
+        </>
     );
 }
 

@@ -20,7 +20,6 @@ function CreateTask() {
                     },
                 });
             
-            
             if (response.status === 201) {
                 alert("Task created successfully!");
                 navigate("/dashboard");
@@ -33,36 +32,51 @@ function CreateTask() {
     };
 
     return (
-        <div>
-            <h2>Create Task</h2>
-            <form onSubmit={handleCreateTask}>
-                <label>
-                    Title:
+        <div className="container mx-auto p-6 max-w-md bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-bold mb-6 text-center">Create Task</h2>
+            <form onSubmit={handleCreateTask} className="space-y-4">
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Title:
+                    </label>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         required
+                        className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                </label>
-                <label>
-                    Description:
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Description:
+                    </label>
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         required
+                        className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        rows="4"
                     ></textarea>
-                </label>
-                <label>
-                    Deadline:
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Deadline:
+                    </label>
                     <input
                         type="date"
                         value={deadline}
                         onChange={(e) => setDeadline(e.target.value)}
                         required
+                        className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                </label>
-                <button type="submit">Create Task</button>
+                </div>
+                <button
+                    type="submit"
+                    className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    Create Task
+                </button>
             </form>
         </div>
     );

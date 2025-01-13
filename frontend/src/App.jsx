@@ -7,6 +7,7 @@ import Create from "./pages/Create.jsx"
 import Update from "./pages/Update.jsx"
 import NotFound from "./pages/NotFound.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx"
+import './index.css'
 
 function Logout() {
     localStorage.clear();
@@ -39,7 +40,7 @@ function App() {
                   }
                 />
                 <Route
-                  path="/update"
+                  path="/update/:id"
                   element={
                       <ProtectedRoute>
                           <Update />

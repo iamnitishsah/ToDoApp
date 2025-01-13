@@ -41,37 +41,65 @@ function UpdateTask() {
     };
 
     return (
-        <div>
-            <h2>Update Task</h2>
-            <form onSubmit={handleUpdateTask}>
-                <label>
-                    Title:
-                    <input
-                        type="text"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Description:
-                    <textarea
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
-                        required
-                    ></textarea>
-                </label>
-                <label>
-                    Deadline:
-                    <input
-                        type="date"
-                        value={deadline}
-                        onChange={(e) => setDeadline(e.target.value)}
-                        required
-                    />
-                </label>
-                <button type="submit">Update Task</button>
-            </form>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+            <div className="w-full max-w-lg p-6 bg-white shadow-md rounded-lg">
+                <h2 className="text-2xl font-bold text-center mb-6">Update Task</h2>
+                <form onSubmit={handleUpdateTask} className="space-y-4">
+                    <div>
+                        <label
+                            htmlFor="title"
+                            className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                            Title:
+                        </label>
+                        <input
+                            id="title"
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                            className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+                    <div>
+                        <label
+                            htmlFor="description"
+                            className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                            Description:
+                        </label>
+                        <textarea
+                            id="description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            required
+                            className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        ></textarea>
+                    </div>
+                    <div>
+                        <label
+                            htmlFor="deadline"
+                            className="block text-sm font-medium text-gray-700 mb-1"
+                        >
+                            Deadline:
+                        </label>
+                        <input
+                            id="deadline"
+                            type="date"
+                            value={deadline}
+                            onChange={(e) => setDeadline(e.target.value)}
+                            required
+                            className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        Update Task
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }
