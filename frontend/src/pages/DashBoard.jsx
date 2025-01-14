@@ -33,32 +33,42 @@ function Dashboard() {
     };
 
     return (
-        <>
-            <div className="container mx-auto p-4">
-                <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
+        <div className="min-h-screen bg-gray-900 text-gray-200">
+            <div className="container mx-auto p-8">
+                <div className="text-center mb-8">
+                    <h1 className="text-4xl font-extrabold text-white">
+                        Task Dashboard
+                    </h1>
+                    <p className="text-lg text-gray-400 mt-2">
+                        Manage your tasks efficiently and stay organized.
+                    </p>
+                </div>
                 {tasks.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {tasks.map((task) => (
-                            <Task 
-                                task={task} 
+                            <Task
+                                task={task}
                                 onDelete={deleteTask}
                                 key={task.id}
-                                className="p-4 border rounded shadow-sm hover:shadow-md"
+                                className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-700"
                             />
                         ))}
                     </div>
                 ) : (
-                    <p className="text-gray-500">No tasks available. Create one!</p>
+                    <p className="text-center text-gray-400 text-xl mt-10">
+                        No tasks available. Start by creating one!
+                    </p>
                 )}
-            </div>
-            <div className="mt-6 flex justify-center">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600">
-                    <a href="/create" className="no-underline text-white">
-                        Create Task
+                <div className="mt-10 flex justify-center">
+                    <a
+                        href="/create"
+                        className="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 transition duration-300 no-underline"
+                    >
+                        Create New Task
                     </a>
-                </button>
+                </div>
             </div>
-        </>
+        </div>
     );
 }
 
