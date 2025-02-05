@@ -169,3 +169,28 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Node.js / React (Vite)
+node_modules/
+dist/
+.vite/
+
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+/media/
+/staticfiles/
+/venv/
+.env
+.todoenv
+
+# Editor & OS Specific
+*.swp
+*~
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
