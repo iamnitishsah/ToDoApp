@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ACCESS_TOKEN } from "./constants.js";
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || 'https://todoapp-backend-sb7c.onrender.com',
+    baseURL: import.meta.env.VITE_API_URL || 'https://todoapp-k9g6.onrender.com',
 });
 
 
