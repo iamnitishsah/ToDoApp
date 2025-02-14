@@ -10,3 +10,4 @@ PyJWT==2.10.1
 python-dotenv==1.0.1
 pytz==2024.2
 sqlparse==0.5.3
+dj-database-url==1.0.0
