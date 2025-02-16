@@ -78,10 +78,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database configuration from .env
 
-import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ToDoDB',
+        'USER': 'iamnitishsah',
+        'PASSWORD': 'Nitish@20',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+    }
 }
 
 
